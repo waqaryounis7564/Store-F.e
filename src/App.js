@@ -1,12 +1,12 @@
 import React from "react";
-import logo from "./logo.svg";
+
 import "./App.css";
+import Table from "./components/table";
 
 function App() {
   return (
     <div>
-      <h1>waqar</h1>
-      <i class="fas fa-camera"></i>
+      <Table></Table>
     </div>
   );
 }
