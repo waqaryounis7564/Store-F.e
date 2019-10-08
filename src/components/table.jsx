@@ -1,11 +1,15 @@
 import React, { Component } from "react";
+import paginate from "../util/pagination";
+import sorted from "../util/sort";
 
 import Like from "./like";
 
 class Table extends Component {
   render() {
-    const { movies } = this.props;
-
+    const { movies: allMovies, pageSize, currentPage, genre } = this.props;
+    let sortedMovies = sorted(allMovies, genre);
+    let movies = paginate(sortedMovies, pageSize, currentPage);
+    console.log(sortedMovies);
     return (
       <div>
         <table className="table">
@@ -27,7 +31,7 @@ class Table extends Component {
                 <td>{movie.dailyRentalRate}</td>
                 <td>{movie.numberInStock}</td>
                 <td>
-                  <Like></Like>
+                  <Like movie={movie._id}></Like>
                 </td>
                 <td>
                   <button

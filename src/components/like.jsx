@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { FaHeart } from "react-icons/fa";
-import { IoIosHeartEmpty } from "react-icons/io";
+
 class Like extends Component {
+  state = { active: true };
+  toggleLike(id) {
+    console.log(id);
+  }
   render() {
-    return this.props.active ? (
-      <FaHeart onClick={this.props.toggle}></FaHeart>
-    ) : (
-      <IoIosHeartEmpty onClick={this.props.toggle}></IoIosHeartEmpty>
-    );
+    return <FaHeart></FaHeart>;
   }
 }
 export default Like;
